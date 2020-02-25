@@ -1,0 +1,311 @@
+@charset "utf-8";
+@import "../../styles/common";
+
+.slider_sub_list {
+  font-size: 0.9rem;
+  font-weight: 200;
+  background-color: #FCF7F7;
+  border-radius: 5px;
+  float: left;
+  width: 46%;
+  height: 50px;
+  display: block;
+  padding: 8px 10px 8px 15px;
+  margin: 0 20px 10px 0;
+  color: $ef-color-black;
+  text-align: left;
+
+  .listText{
+    display: inline-block;
+    line-height: 1rem;
+    padding-top: 0.5rem;
+  }
+  .wrapRow{
+    padding-top: 0rem;
+  }
+  .noWrapRow{
+    display: none;
+  }
+  @media (max-width: 992px){
+    width: 98%;
+
+    .wrapRow{
+      display: none;
+    }
+    .noWrapRow{
+      display: block;
+    }
+  }
+  .listIcon{
+    background-color: $ef-color-blue;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0px;
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    margin-right: 10px;
+    float: left;
+
+    i{
+      margin-top: 10px;
+    }
+  }
+}
+.viewDemoBtn{
+  text-align: left;
+  @media (max-width: 768px){
+    text-align: center;
+  }
+}
+.viewDemoBtn.leftSide{
+  display: block;
+  @media (min-width: 768px) and (max-width: 992px){
+    display: none;
+  }
+  @media (max-width: 768px){
+    display: block;
+    text-align: left;
+  }
+}
+.viewDemoBtn.rightSide{
+  display: none;
+  @media (min-width: 768px) and (max-width: 992px){
+    display: block;
+    text-align: center;
+    margin-top: -130px;
+  }
+}
+
+.home_feature_text_bg {
+  background-color: #fafafa;
+  border-color: #fafafa;
+  border-style: solid;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.home-img-block{
+  height: 100%;
+  min-height: 200px;
+}
+.home-hero-01{
+  @extend .home-img-block;
+  background-position: right top;
+  @include bg-image-size-adapter('/assets/home/home_hero_01', '.png');
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: right 10%;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+    height: 260px;
+    margin-top: 20px;
+  }
+}
+.home-img-01{
+  @extend .home-img-block;
+  @include bg-image-size-adapter('/assets/home/home_img_01', '.png');
+  padding: 20px;
+  max-height: 300px;
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: left center;
+    max-height: unset;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+    height: 260px;
+  }
+}
+.home-img-for-LS{
+  @media (min-width: 768px){
+    display: block;
+  }
+  @media (max-width: 768px){
+    display: none;
+  }
+}
+.home-img-for-SS{
+  @media (min-width: 768px){
+    display: none;
+  }
+  @media (max-width: 768px){
+    display: block;
+  }
+}
+
+.home-img-02{
+  @extend .home-img-block;
+  @include bg-image-size-adapter('/assets/home/home_img_02', '.png');
+  padding: 20px;
+  background-position: right 10%;
+  max-height: 300px;
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: right center;
+    max-height: unset;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+    height: 260px;
+  }
+}
+.home-img-03{
+  @extend .home-img-block;
+  @include bg-image-size-adapter('/assets/home/home_img_03', '.png');
+  padding: 20px;
+  max-height: 300px;
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: left center;
+    max-height: unset;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+    height: 260px;
+  }
+}
+.home-img-04{
+  @extend .home-img-block;
+  @include bg-image-size-adapter('/assets/home/home_img_04', '.png');
+  padding: 20px;
+  background-position: right 10%;
+  max-height: 300px;
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: right center;
+    max-height: unset;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+    height: 260px;
+  }
+}
+
+.home-banner {
+  @include bg-image-size-adapter('/assets/home/home_banner_01', '.png');
+  width: 100%;
+  background-color: #000000;
+  background-position: center center;
+  background-size: cover;
+  padding: 80px;
+  position: relative;
+  display: inline-block;
+
+  .home-banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 41, 42, 0.9);
+    z-index: 1;
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    max-width: 450px;
+    float: left;
+
+    b {
+      font-size: 3rem;
+      color: $ef-color-blue;
+    }
+  }
+
+  .home-banner-btn {
+    float: right;
+    color: white;
+    font-size: 14px;
+    max-width: 360px;
+    min-width: 220px;
+    position: relative;
+    z-index: 2;
+    margin-left: 50px;
+    margin-top: 20px;
+
+    .icon{
+      width: 58px;
+      height: 58px;
+      border-radius: 58px;
+      display: inline-block;
+      background-color: $ef-color-green;
+      text-align: center;
+      line-height: 58px;
+      position: relative;
+      float: left;
+
+      .icon-cup{
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        @include bg-image-size-adapter('/assets/home/home_banner_icon_01', '.png');
+        background-size: contain;
+        position: absolute;
+        top: 21px;
+        left: 20px;
+      }
+
+      .icon-play{
+        @extend .icon-cup;
+        @include bg-image-size-adapter('/assets/home/home_banner_icon_02', '.png');
+        left: 22px;
+      }
+    }
+
+    .text{
+      display: inline-block;
+      padding-left: 12px;
+      font-size: 22px;
+      line-height: 58px;
+      text-align: left;
+      padding-left: 15px;
+    }
+  }
+  .home-banner-btn.left-btn{
+    margin-left: 0;
+  }
+}
+
+.home-intro-01{
+  @include bg-image-size-adapter('/assets/home/home_intro_01', '.png');
+  height: 600px;
+  background-position: right center;
+  @media (max-width: 768px){
+    background-position: center;
+    height: 500px;
+  }
+}
+
+.home-testimonials {
+  padding: 80px 0;
+  background-color: #f7f7f7;
+}
+.ss_testimonial_images{
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  display: inline-block;
+  border: 1px dotted $ef-color-blue;
+  border-radius: 70px;
+  padding: 10px;
+  background-color: white;
+
+  .avatar{
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  img{
+    width: 120px;
+    margin: -25px 0px;
+  }
+}
+.sarah_wilson {
+  font-weight: 800 !important;
+}

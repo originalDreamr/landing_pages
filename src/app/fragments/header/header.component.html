@@ -1,0 +1,75 @@
+<header>
+  <div class="container content pb-3"> <!-- container centers content on large screens -->
+    <div class="row">             <!-- responsive row has 12 columns by default -->
+      <div class="col-md-12">
+        <nav class="navbar sticky-top navbar-expand-lg">
+          <a class="navbar-brand" routerLink="/"><img src="assets/logo@2x.png" height="55"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavBarContent" aria-controls="topNavBarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="ef-font-2rem ef-color-blue"><i class="fa fa-bars"></i></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="topNavBarContent">
+            <ul class="navbar-nav ml-auto">
+<!--              <li class="nav-item" routerLinkActive="active" >-->
+<!--                <a class="nav-link" routerLink="/">home</a>-->
+<!--              </li>-->
+              <li class="nav-item" routerLinkActive="active" >
+                <a class="nav-link" routerLink="/features">features</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active" >
+                <a class="nav-link" routerLink="/how-it-works">how it works</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navPricingDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  pricing
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navPricingDropdown">
+                  <a class="dropdown-item" routerLink="/payment-gateway" routerLinkActive="active">payment gateway</a>
+                  <a class="dropdown-item" routerLink="/pricing" routerLinkActive="active">accounting & taxes</a>
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navServicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Services
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navServicesDropdown">
+                  <a class="dropdown-item" routerLink="#" routerLinkActive="active">Free CPA Services</a>
+
+                  <div class="dropdown-sub-menu" style="padding-left: 1rem">
+                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Bookkeeping</a>
+                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Sales Tax</a>
+                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Payroll</a>
+                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Income Tax</a>
+                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Government Notice</a>
+                  </div>
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" routerLink="#" routerLinkActive="active">Payment Processing</a>
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navResourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Resources
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navResourcesDropdown">
+                  <a class="dropdown-item" routerLink="#" routerLinkActive="active">About Us</a>
+                  <a class="dropdown-item" routerLink="#" routerLinkActive="active">Blog</a>
+                  <a class="dropdown-item" routerLink="#" routerLinkActive="active">Podcast</a>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link navbar-large-btn" href="#">Dashboard</a>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+</header>

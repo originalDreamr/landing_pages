@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+$ef-color-green: #22C25C;
+$ef-color-blue: #0E9ED8;
+$ef-color-black: #111111;
+
+.ef-bg-color-green{background-color: $ef-color-green;}
+.ef-bg-color-blue{background-color: $ef-color-blue;}
+.ef-bg-color-black{background-color: $ef-color-black;}
+.ef-color-green{color: $ef-color-green;}
+.ef-color-blue{color: $ef-color-blue;}
+.ef-color-black{color: $ef-color-black;}
+
+.ef-font-2rem{font-size: 2rem}
+.ef-btn-large{
+  color: white;
+  border-radius: 60px;
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 30px;
+  line-height: 45px;
+  border: 0px;
+}
+.ef-btn-ex-large {
+  background-color: $ef-color-green;
+  color: #fff!important;
+  outline: none;
+  padding: 15px 40px;
+  font-size: 20px;
+  border-radius: 50px!important;
+  font-weight: 300!important;
+  transition: 0.5s;
+  text-decoration: none!important;
+}
+
+body{
+  font-family: Montserrat,sans-serif;
+  font-weight: 300!important;
+}
+//==== top nav part start
+.navbar{
+  padding: 1rem 0;
+}
+.navbar-nav li {
+  a{
+    text-transform: capitalize;
+    color: $ef-color-black;
+    transition: background-color .2s,color .2s;
+  }
+
+  .navbar-large-btn {
+    @extend .ef-btn-large;
+    @extend .ef-bg-color-green;
+  }
+}
+.navbar-nav li.active > a {
+  color: $ef-color-blue !important;
+  font-weight: 400;
+}
+.dropdown-sub-menu .dropdown-item{
+  padding-left: 2rem;
+  font-size: 90%;
+}
+.dropdown-item{
+  font-weight: 300;
+}
+@media (min-width: 992px){
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+//== top nav part end
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+.ef-h1{
+  font-size: 2rem; // over 1200px
+  font-weight: 600;
+  color: $ef-color-black;
+  @media (max-width: 992px){
+    font-size: 1.5rem;
+  }
+  @media (max-width: 768px){
+    font-size: 2rem;
+  }
+  @media (max-width: 576px){
+    font-size: 1.3rem;
+  }
+  //@each $breakpoint in map-keys($grid-breakpoints) {
+  //  content: $breakpoint;
+  //}
+}
+
+@mixin bg-image-size-adapter($url, $extension) {
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-image: url($url + $extension);
+  @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){
+    background-image: url($url + "@2x" + $extension);
+  }
+}
