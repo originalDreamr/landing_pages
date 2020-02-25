@@ -7,6 +7,9 @@ import {NgHelperComponent} from './pages/ng-helper/ng-helper.component';
 import {HomeComponent} from './pages/home/home.component';
 import {HeaderComponent} from './fragments/header/header.component';
 import {FooterComponent} from './fragments/footer/footer.component';
+import { DownloadsComponent } from './fragments/downloads/downloads.component';
+import { FooterBannerComponent } from './fragments/footer-banner/footer-banner.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,10 +18,13 @@ import {FooterComponent} from './fragments/footer/footer.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    DownloadsComponent,
+    FooterBannerComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,41 @@
+@charset "utf-8";
+@import "../../styles/common";
+
+.download_btns{
+  clear: both;
+  margin-left: -10px;
+  padding-top: 40px;
+  @media (max-width: 768px){
+    padding-top: 0px;
+  }
+  .download_btn{
+    img{width: 180px}
+  }
+}
+
+.download-img-01{
+  height: 450px;
+  background-position: right top;
+  @include bg-image-size-adapter('/assets/downloads/download_icon_app', '.png');
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: right 10%;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+    height: 260px;
+    margin-top: 20px;
+  }
+}
+.download-box{
+  h1{
+    padding-top: 3rem;
+  }
+  @media (min-width: 768px) and (max-width: 992px) {
+    h1 {
+      padding-top: 0;
+    }
+    .download_btns {
+      padding-top: 1rem;
+    }
+  }
+}

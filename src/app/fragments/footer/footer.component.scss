@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import "../../styles/common";
+
+.footer-logo{
+  img {
+    width: 180px;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+.contact-details {
+  h5 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    padding: 5px;
+    list-style: none;
+
+    li {
+      font-size: 15px;
+      font-weight: 300 !important;
+      margin: 10px 0;
+    }
+    a {
+      color: $ef-color-black;
+    }
+  }
+}
+.social-container{
+  padding-top: 70px;
+  padding-left: 5px;
+
+  @media (max-width: 768px){
+    padding-top: 20px;
+  }
+
+  a{
+    margin-right: 15px;
+  }
+  .fa{
+    font-size: 1.6em;
+    color: $ef-color-blue;
+  }
+
+}
+

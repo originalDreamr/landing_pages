@@ -1,0 +1,72 @@
+@charset "utf-8";
+@import "../../styles/common";
+
+.footer-banner{
+  width: 100%;
+  background-color: #000000;
+  @include bg-image-size-adapter('/assets/footer/footer_banner_01', '.png');
+  background-position: center center;
+  background-size: cover;
+  padding: 60px 130px;
+  position: relative;
+  display: inline-block;
+  color: white;
+
+  @media (min-width: 768px) and (max-width: 992px){
+    padding: 40px 50px;
+  }
+  @media (max-width: 768px){
+    padding: 20px 20px;
+  }
+
+  .footer-banner-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 41, 42, 0.9);
+    z-index: 1;
+  }
+  .text-box{
+    float: left;
+    width: 70%;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+
+    @media (max-width: 768px){
+      width: 100%;
+      padding-top: 20px;
+    }
+
+    h3{
+      font-size: 36px;
+      font-weight: 500;
+      float: left;
+      b{
+        color: $ef-color-blue;
+      }
+    }
+
+    .helper_block{
+      clear: both;
+    }
+  }
+
+  .footer-banner-btn{
+    float: right;
+    display: inline-block;
+    text-align: right;
+    padding-top: 40px;
+    white-space: nowrap;
+
+    @media (max-width: 768px){
+      float: unset;
+      padding-bottom: 40px;
+    }
+    .ef-btn{
+      @extend .ef-btn-ex-large;
+    }
+  }
+}
