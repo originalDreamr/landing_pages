@@ -27,6 +27,7 @@
   }
 }
 .download-box{
+  padding-top: 3rem;
   h1{
     padding-top: 3rem;
   }
@@ -37,5 +38,8 @@
     .download_btns {
       padding-top: 1rem;
     }
+  }
+  @media (max-width: 768px){
+    padding-top: 0;
   }
 }
