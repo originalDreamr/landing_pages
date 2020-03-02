@@ -6,6 +6,7 @@ import {MetaLinkService} from './meta-link.service';
   providedIn: 'root'
 })
 export class SeoService {
+  private siteUrl = 'https://www.efortles.com/';
 
   constructor(private titleService: Title,
               private metaService: Meta,
@@ -19,7 +20,7 @@ export class SeoService {
     // @ts-ignore
     this.setNameAttribute('keywords', pageConfig.keywords);
     // @ts-ignore
-    this.setMateLink(pageConfig.pageUrl);
+    this.setMateLink(this.siteUrl + pageConfig.pageUrl);
     // this.setNameAttribute('twitter:title', seoConfig[page].title);
     // this.setNameAttribute('twitter:description', seoConfig[page].description);
     // this.setNameAttribute('twitter:image', seoConfig[page].image);

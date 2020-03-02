@@ -1,8 +1,26 @@
-<header>
+<header class="sticky-top">
+<!--  !isLogin && -->
+  <div class="limited-spot-banner" *ngIf="isNormalPage && myService.spotsLimit > 0">
+    <div class="container content">
+    <div class="row">
+      <div class="col-md-4 text-nowrap">
+        <span class="star-circle"><i class="fa fa-star"></i></span> Monthly Limited Spots: {{myService.spotsLimit}}
+      </div>
+      <div class="col-md-4">
+        Currently Available: {{myService.spotsLeft}}
+      </div>
+      <div class="col-md-4">
+        <i class="fa fa-phone-square"></i>&nbsp;&nbsp;<a href="tel:888-808-2318">(888) 808-2318</a>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
   <div class="container content pb-3"> <!-- container centers content on large screens -->
     <div class="row">             <!-- responsive row has 12 columns by default -->
       <div class="col-md-12">
-        <nav class="navbar sticky-top navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg">
           <a class="navbar-brand" routerLink="/"><img src="assets/logo@2x.png" height="55"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavBarContent" aria-controls="topNavBarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="ef-font-2rem ef-color-blue"><i class="fa fa-bars"></i></span>
@@ -16,33 +34,33 @@
               <li class="nav-item" routerLinkActive="active" >
                 <a class="nav-link" routerLink="/features">features</a>
               </li>
-              <li class="nav-item" routerLinkActive="active" >
-                <a class="nav-link" routerLink="/how-it-works">how it works</a>
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link text-nowrap" routerLink="/how-it-works">how it works</a>
               </li>
 
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown" routerLinkActive="active">
                 <a class="nav-link dropdown-toggle" href="#" id="navPricingDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   pricing
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navPricingDropdown">
                   <a class="dropdown-item" routerLink="/payment-gateway" routerLinkActive="active">payment gateway</a>
-                  <a class="dropdown-item" routerLink="/pricing" routerLinkActive="active">accounting & taxes</a>
+                  <a class="dropdown-item" routerLink="/accounting-and-taxes" routerLinkActive="active">accounting & taxes</a>
                 </div>
               </li>
 
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown" routerLinkActive="active">
                 <a class="nav-link dropdown-toggle" href="#" id="navServicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Services
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navServicesDropdown">
-                  <a class="dropdown-item" routerLink="#" routerLinkActive="active">Free CPA Services</a>
+                  <span class="dropdown-item">Free CPA Services</span>
 
                   <div class="dropdown-sub-menu" style="padding-left: 1rem">
-                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Bookkeeping</a>
-                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Sales Tax</a>
-                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Payroll</a>
-                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Income Tax</a>
-                    <a class="dropdown-item" routerLink="#" routerLinkActive="active">Government Notice</a>
+                    <a class="dropdown-item" routerLink="/bookkeeping" routerLinkActive="active">Bookkeeping</a>
+                    <a class="dropdown-item" routerLink="/sales-tax" routerLinkActive="active">Sales Tax</a>
+                    <a class="dropdown-item" routerLink="/payroll" routerLinkActive="active">Payroll</a>
+                    <a class="dropdown-item" routerLink="/income-tax" routerLinkActive="active">Income Tax</a>
+                    <a class="dropdown-item" routerLink="/government-notice" routerLinkActive="active">Government Notice</a>
                   </div>
 
                   <div class="dropdown-divider"></div>
@@ -61,7 +79,17 @@
                 </div>
               </li>
 
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="!isLogin">
+                <a class="nav-link" routerLink="/login">Login</a>
+              </li>
+              <li class="nav-item" *ngIf="!isLogin">
+                <a class="nav-link navbar-large-btn" href="/signup">Sign Up</a>
+              </li>
+
+              <li class="nav-item" *ngIf="isLogin">
+                <a class="nav-link" href="javascript:;" (click)="myService.logOut()">Log out</a>
+              </li>
+              <li class="nav-item" *ngIf="isLogin">
                 <a class="nav-link navbar-large-btn" href="#">Dashboard</a>
               </li>
             </ul>

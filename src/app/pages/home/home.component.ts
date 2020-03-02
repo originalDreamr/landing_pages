@@ -5,6 +5,7 @@ import {isPlatformBrowser} from '@angular/common';
 import {NgbCarousel, NgbSlideEvent, NgbSlideEventSource} from '@ng-bootstrap/ng-bootstrap';
 
 import * as $ from 'jquery';
+import {MyServiceService} from '../../services/my-service.service';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
   constructor(
+    public myService: MyServiceService,
     @Inject(PLATFORM_ID) private platformId,
     private seoService: SeoService,
     private eventManager: EventManager,
@@ -27,7 +29,7 @@ export class HomeComponent implements OnInit {
     description: 'If you are a small business looking for a CPA and ' +
       'bookkeeping services in New York, open your free account today. We\'ll help you manage expenses so you can run your business.',
     keywords: '',
-    pageUrl: 'https://www.efortles.com',
+    pageUrl: '',
   };
 
   slides = [

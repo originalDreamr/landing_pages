@@ -1,0 +1,110 @@
+<app-header></app-header>
+
+<div class="container"> <!-- container centers content on large screens -->
+  <div class="row">             <!-- responsive row has 12 columns by default -->
+    <div class="col-md-6 my-4">
+      <h1 class="ef-h1">How EFORTles helps your<br> business</h1>
+      <p class="py-4">Let EFORTles lift the accounting burden from your business.</p>
+
+      <div class="clearfix pt-4">
+        <a href="javascript:;" class="ef-btn-ex-large" (click)="myService.showHomeVideo($event)"
+           data-target="#homeVideoModal" data-toggle="modal">
+          Let’s Get Started
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 my-4 text-right">
+      <iframe class="round-5 hiw-video" src="https://www.youtube.com/embed/eRa6SlK3Gcg?autoplay=1" ng-show="showvideo"
+              frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </div>
+    <!--Step 1-->
+    <div class="col-md-5 offset-md-1 my-4 block-img-for-LS">
+      <div class="hiw-step-img-01"></div>
+    </div>
+    <div class="col-md-5 my-4 home_feature_text_bg">
+      <h4 class="ef-color-blue">STEP: 1</h4>
+      <h4>Sign up for a Free trial</h4>
+      <p class="text-muted">Your EFORTles account includes bookkeeping and CPA services for your business. You’ll meet your
+        dedicated CPA team upon completion of your online registration.</p>
+    </div>
+    <div class="col-md-6 my-4 block-img-for-SS">
+      <div class="hiw-step-img-01"></div>
+    </div>
+    <!--Step 2-->
+    <div class="col-md-5 offset-md-1 my-4 home_feature_text_bg">
+      <h4 class="ef-color-blue">STEP: 2</h4>
+      <h4>Receive Onboarding Call</h4>
+      <p class="text-muted">During the onboarding call, you will meet your dedicated CPA team and they will guide you through
+        completing your company and owner information. </p>
+    </div>
+
+    <div class="col-md-5 my-4">
+      <div class="hiw-step-img-02"></div>
+    </div>
+    <!--Step 3-->
+    <div class="col-md-5 offset-md-1 my-4 block-img-for-LS">
+      <div class="hiw-step-img-03"></div>
+    </div>
+    <div class="col-md-5 my-4 home_feature_text_bg">
+      <h4 class="ef-color-blue">STEP: 3</h4>
+      <h4>Link Bank Accounts</h4>
+      <p class="text-muted">Every time you open a new bank account for your business, just link it through the user portal and
+        we will retrieve all the financial information going forward. </p>
+    </div>
+    <div class="col-md-6 my-4 block-img-for-SS">
+      <div class="hiw-step-img-03"></div>
+    </div>
+    <!--Step 4-->
+    <div class="col-md-5 offset-md-1 my-5 home_feature_text_bg">
+      <h4 class="ef-color-blue">STEP: 4</h4>
+      <h4>Accept Tax Returns</h4>
+      <p class="text-muted">When deadlines approach, your dedicated CPA will prepare and upload the draft tax returns.
+        Simply log on and sign off on the returns so we can file them for you.</p>
+    </div>
+    <div class="col-md-5 my-4">
+      <div class="hiw-step-img-04"></div>
+    </div>
+    <!--Step 5-->
+    <div class="col-md-5 offset-md-1 my-4 block-img-for-LS">
+      <div class="hiw-step-img-05"></div>
+    </div>
+    <div class="col-md-5 my-4 home_feature_text_bg">
+      <h4 class="ef-color-blue">STEP: 5</h4>
+      <h4>Enjoy Peace of Mind</h4>
+      <p class="text-muted">You are all done! Now lay back, relax, and enjoy peace of mind. </p>
+    </div>
+    <div class="col-md-6 my-4 block-img-for-SS">
+      <div class="hiw-step-img-05"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid align-self-center margin-tb-20 ef-box-bg-gray">
+  <div class="container padding-tb-60">
+    <div class="row text-center">
+      <div class="col-md-4 padding-lr-20">
+        <p><img width="100%" src="assets/how-it-works/hiw_banner_img_01@2x.png"></p>
+        <h4>Stress Free</h4>
+        <p class="text-muted">Never worry about sales tax deadlines, income tax season or payroll reporting ever again.
+          Your dedicated CPA will take care of everything before you notice a deadline is approaching. </p>
+      </div>
+      <div class="col-md-4 padding-lr-20">
+        <p><img width="100%" src="assets/how-it-works/hiw_banner_img_02@2x.png"></p>
+        <h4>Paperless</h4>
+        <p class="text-muted">Say goodbye to paper documents and bank statements.
+          We synchronize all your bank accounts digitally. All your tax returns, financial statements,
+          and paystubs are stored on our cloud server securely.</p>
+      </div>
+      <div class="col-md-4 padding-lr-20">
+        <p><img width="100%" src="assets/how-it-works/hiw_banner_img_03@2x.png"></p>
+        <h4>24/7 Access</h4>
+        <p class="text-muted">You can access your accounting records, edit payroll information,
+          view filed tax returns, and exchange messages with your dedicated CPA through your account portal, 24/7. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-downloads></app-downloads>
+<app-footer-banner></app-footer-banner>
+<app-footer></app-footer>

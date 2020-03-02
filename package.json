@@ -11,6 +11,7 @@
     "dev:ssr": "ng run efortles-ssr:serve-ssr",
     "serve:ssr": "node dist/efortles-ssr/server/main.js",
     "build:ssr": "ng build --prod && ng run efortles-ssr:server:production",
+    "build:ssr[Optimized]": "ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer --output-hashing none && ng run efortles-ssr:server:production",
     "prerender": "ng run efortles-ssr:prerender"
   },
   "private": true,
@@ -30,6 +31,8 @@
     "bootstrap": "^4.4.1",
     "express": "^4.15.2",
     "jquery": "^3.4.1",
+    "localstorage-polyfill": "^1.0.1",
+    "ngx-cookie-service": "^2.4.0",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

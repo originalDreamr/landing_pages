@@ -1,0 +1,11 @@
+@charset "utf-8";
+@import "../../../styles/common";
+
+.pricing-img{
+  @extend .padding-tb-20;
+
+  img{
+    max-width: 743px;
+    width: 75%;
+  }
+}

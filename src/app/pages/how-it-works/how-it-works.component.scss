@@ -1,0 +1,87 @@
+@charset "utf-8";
+@import "../../styles/common";
+
+.hiw-img-block{
+  height: 240px;
+  padding: 20px;
+}
+
+.hiw-step-img-01{
+  @extend .hiw-img-block;
+  @include bg-image-size-adapter('/assets/how-it-works/hiw_step_img_01', '.png');
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: right center;
+    max-height: unset;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+  }
+}
+.hiw-step-img-02{
+  @extend .hiw-img-block;
+  @include bg-image-size-adapter('/assets/how-it-works/hiw_step_img_02', '.png');
+  background-position: right 10%;
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: right center;
+    max-height: unset;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+  }
+}
+.hiw-step-img-03{
+  @extend .hiw-img-block;
+  @include bg-image-size-adapter('/assets/how-it-works/hiw_step_img_03', '.png');
+
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: left center;
+    max-height: unset;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+  }
+}
+.hiw-step-img-04{
+  @extend .hiw-img-block;
+  @include bg-image-size-adapter('/assets/how-it-works/hiw_step_img_04', '.png');
+  background-position: right 10%;
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: right center;
+    max-height: unset;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+  }
+}
+.hiw-step-img-05{
+  @extend .hiw-img-block;
+  @include bg-image-size-adapter('/assets/how-it-works/hiw_step_img_05', '.png');
+
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: left center;
+    max-height: unset;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+  }
+}
+
+
+.hiw-video{
+  width: 538px;
+  height: 333px;
+  @media (max-width: 1200px){
+    width: 100%;
+    height: (40vw * 333 / 538);
+  }
+  @media (min-width: 768px) and (max-width: 992px){
+    width: 100%;
+    height: (40vw * 333 / 538);
+    min-height: 200px;
+    max-height: 240px;
+  }
+  @media (max-width: 768px){
+    width: 100%;
+    height: (96vw * 333 / 538);
+  }
+}

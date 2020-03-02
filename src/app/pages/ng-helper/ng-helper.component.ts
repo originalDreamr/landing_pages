@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SeoService} from '../../services/seo.service';
+import {MyServiceService} from '../../services/my-service.service';
 
 @Component({
   selector: 'app-ng-helper',
@@ -12,9 +13,12 @@ export class NgHelperComponent implements OnInit {
     title: 'This is the angular sample page!',
     description: 'introduce to angular description',
     keywords: 'keywords for angular introduction',
-    pageUrl: 'http://localhost:4200/ng-helper'
+    pageUrl: 'ng-helper'
   };
-  constructor(private seoService: SeoService) {
+  constructor(
+    public myService: MyServiceService,
+    private seoService: SeoService
+  ) {
     this.seoService.setMeta(this.pageConfig);
   }
 
