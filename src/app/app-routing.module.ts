@@ -12,6 +12,9 @@ import {GovernmentNoticeComponent} from './pages/services/government-notice/gove
 import {IncomeTaxComponent} from './pages/services/income-tax/income-tax.component';
 import {PayrollComponent} from './pages/services/payroll/payroll.component';
 import {SalesTaxComponent} from './pages/services/sales-tax/sales-tax.component';
+import {PaymentProcessingComponent} from './pages/services/payment-processing/payment-processing.component';
+import {AboutUsComponent} from './pages/about-us/about-us.component';
+import {PodcastComponent} from './pages/podcast/podcast.component';
 
 
 const routes: Routes = [
@@ -30,6 +33,10 @@ const routes: Routes = [
   { path: 'income-tax', component: IncomeTaxComponent },
   { path: 'payroll', component: PayrollComponent },
   { path: 'sales-tax', component: SalesTaxComponent },
+  { path: 'payment-processing', component: PaymentProcessingComponent },
+  // resources
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'podcast', component: PodcastComponent },
   // others
   { path: 'ng-helper', component: NgHelperComponent },
   { path: '404', component:  NotFoundComponent},

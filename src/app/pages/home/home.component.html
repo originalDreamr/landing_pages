@@ -1,7 +1,7 @@
 <app-header></app-header>
 
-<div class="container content"> <!-- container centers content on large screens -->
-  <div class="row">             <!-- responsive row has 12 columns by default -->
+<div class="container">
+  <div class="row">
     <div class="col-md-6 my-4">
       <h1 class="ef-h1">Free CPA & Accounting Services, 5 Minutes a Week</h1>
       <p class="text-muted">Everything you need for your business accounting & taxes.</p>
@@ -28,8 +28,7 @@
       </div>
       <div class="clearfix pt-4 viewDemoBtn leftSide">
         <!--old video: https://www.youtube.com/embed/UKlywgu8zH0-->
-        <!--           (click)="myService.showHomeVideo($event)"-->
-        <a href="javascript:;" class="ef-btn-ex-large"
+        <a href="javascript:;" class="ef-btn-ex-large" (click)="myService.showHomeVideo($event)"
            data-target="#homeVideoModal" data-toggle="modal">
           View Demo
         </a>
@@ -39,11 +38,12 @@
       <div class="home-hero-01"></div>
       <div class="clearfix pt-4 viewDemoBtn rightSide">
         <!--old video: https://www.youtube.com/embed/UKlywgu8zH0-->
-        <!--           (click)="myService.showHomeVideo($event)"-->
-        <a href="javascript:;" class="ef-btn-ex-large"
-           data-target="#homeVideoModal" data-toggle="modal">
+        <a href="javascript:;" class="ef-btn-ex-large" (click)="myService.showHomeVideo($event)" data-target="#homeVideoModal" data-toggle="modal">
           View Demo
         </a>
+<!--        <a href="https://www.efortles.co/?act=demo" class="ef-btn-ex-large">-->
+<!--          View Demo-->
+<!--        </a>-->
       </div>
     </div>
 

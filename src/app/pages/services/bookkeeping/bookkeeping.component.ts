@@ -10,8 +10,9 @@ import {SeoService} from '../../../services/seo.service';
 export class BookkeepingComponent implements OnInit {
 
   pageConfig = {
-    title: '',
-    description: '',
+    title: 'Bookkeeping & Account Management Services Small Businesses',
+    description: 'Efortles offers free bookkeeping services and account management for small businesses. ' +
+      'Our free bookkeeping app makes it easy to stay on top of your assets.',
     keywords: '',
     pageUrl: 'bookkeeping',
   };

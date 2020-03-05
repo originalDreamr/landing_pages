@@ -22,6 +22,9 @@ import { PayrollComponent } from './pages/services/payroll/payroll.component';
 import { IncomeTaxComponent } from './pages/services/income-tax/income-tax.component';
 import { GovernmentNoticeComponent } from './pages/services/government-notice/government-notice.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PaymentProcessingComponent } from './pages/services/payment-processing/payment-processing.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { PodcastComponent } from './pages/podcast/podcast.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     IncomeTaxComponent,
     GovernmentNoticeComponent,
     NotFoundComponent,
+    PaymentProcessingComponent,
+    AboutUsComponent,
+    PodcastComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

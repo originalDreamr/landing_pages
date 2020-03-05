@@ -1,6 +1,15 @@
 @charset "utf-8";
 @import "../../styles/common";
 
+$ef-footer-gray: #8e8e8e;
+footer{
+  background-color: #f0f0f0;
+  color: $ef-footer-gray;
+
+  a{
+    color: $ef-footer-gray;
+  }
+}
 .footer-logo{
   img {
     width: 180px;
@@ -28,7 +37,7 @@
       margin: 10px 0;
     }
     a {
-      color: $ef-color-black;
+      color: $ef-footer-gray;
     }
   }
 }

@@ -1,0 +1,19 @@
+@import "../../styles/common";
+
+.img-block{
+  height: 100%;
+  min-height: 260px;
+}
+.ef-img-00{
+  @extend .img-block;
+  background-position: right top;
+  @include bg-image-size-adapter('/assets/images/podcast_img_01', '.png');
+  @media (min-width: 768px) and (max-width: 992px){
+    background-position: right 10%;
+  }
+  @media (max-width: 768px){
+    background-position: center;
+    height: 260px;
+    margin-top: 20px;
+  }
+}

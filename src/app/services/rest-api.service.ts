@@ -78,6 +78,7 @@ export class RestApiService {
     localStorage.removeItem('currentUserData');
     localStorage.removeItem('c_cmp_pic');
     this.currentUserSubject.next(null);
-    this.router.navigate([this.returnUrl]);
+    this.router.navigate(['/']);
+    // this.router.navigate([this.returnUrl]);
   }
 }
