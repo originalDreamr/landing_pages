@@ -25,6 +25,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PaymentProcessingComponent } from './pages/services/payment-processing/payment-processing.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PodcastComponent } from './pages/podcast/podcast.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { PodcastComponent } from './pages/podcast/podcast.component';
     PaymentProcessingComponent,
     AboutUsComponent,
     PodcastComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

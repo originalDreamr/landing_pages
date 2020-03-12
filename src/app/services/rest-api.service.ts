@@ -55,6 +55,7 @@ export class RestApiService {
   }
 
   myHttp(method, apiName, param) {
+    console.log('myHttp', this.baseURl + apiName)
     if ('post' === method.toLowerCase()) {
       return this.http.post<any>(this.baseURl + apiName, param)
         .pipe(map(response => {

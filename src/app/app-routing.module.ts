@@ -15,6 +15,7 @@ import {SalesTaxComponent} from './pages/services/sales-tax/sales-tax.component'
 import {PaymentProcessingComponent} from './pages/services/payment-processing/payment-processing.component';
 import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {PodcastComponent} from './pages/podcast/podcast.component';
+import {BlogComponent} from './pages/blog/blog.component';
 
 
 const routes: Routes = [
@@ -37,7 +38,8 @@ const routes: Routes = [
   // resources
   { path: 'about-us', component: AboutUsComponent },
   { path: 'podcast', component: PodcastComponent },
-  // others
+  // others and testing
+  { path: 'blogs', component: BlogComponent },
   { path: 'ng-helper', component: NgHelperComponent },
   { path: '404', component:  NotFoundComponent},
   { path: '**', redirectTo: '404' }
