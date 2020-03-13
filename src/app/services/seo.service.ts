@@ -6,7 +6,7 @@ import {MetaLinkService} from './meta-link.service';
   providedIn: 'root'
 })
 export class SeoService {
-  private siteUrl = 'https://www.efortles.com/';
+  public siteUrl = 'https://www.efortles.com/';
 
   constructor(private titleService: Title,
               private metaService: Meta,

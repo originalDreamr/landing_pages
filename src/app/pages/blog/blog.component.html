@@ -8,7 +8,7 @@
         <span class="share-button-box float-right">
           <a class="share-btn" href="javascript:;" (click)="toggleShareBtn('open');"><i class="fa fa-share-alt"></i></a>
           <div *ngIf="shareBtnExpanded" class="share-options">
-            <a href="mailto:info@efortles.com"><i class="fa fa-envelope"></i></a>
+            <a [href]="'mailto:info@efortles.com?subject=Efortles Knowledge Base - ' + blog.title + '&body=' + pageFullUrl"><i class="fa fa-envelope"></i></a>
             <a href="javascript:;" class="icon-close-share" (click)="toggleShareBtn('close');"><i class="fa fa-close"></i></a>
           </div>
         </span>

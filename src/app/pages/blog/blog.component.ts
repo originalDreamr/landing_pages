@@ -12,6 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class BlogComponent implements OnInit {
   pathName = null;
+  pageFullUrl = '';
   blog = {
     title: '',
     content: '',
@@ -61,6 +62,7 @@ export class BlogComponent implements OnInit {
             pageUrl: 'blog/' + res.path_name,
           };
           this.seoService.setMeta(this.pageConfig);
+          this.pageFullUrl = this.seoService.siteUrl + this.pageConfig.pageUrl;
         }, error => {
           // console.log('getBlogList:error', error);
           return {};
