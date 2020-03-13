@@ -26,6 +26,8 @@ import { PaymentProcessingComponent } from './pages/services/payment-processing/
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PodcastComponent } from './pages/podcast/podcast.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import {MyUtils} from './helpers/my-utils';
+import { BlogsComponent } from './pages/blogs/blogs.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { BlogComponent } from './pages/blog/blog.component';
     AboutUsComponent,
     PodcastComponent,
     BlogComponent,
+    BlogsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -57,7 +60,7 @@ import { BlogComponent } from './pages/blog/blog.component';
     NgbModule,
     HttpClientModule,
   ],
-  providers: [CookieService],
+  providers: [CookieService, MyUtils],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import {User} from '../models/User';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router, ActivatedRoute} from '@angular/router';
 import {map} from 'rxjs/operators';
+import {MyUtils} from '../helpers/my-utils';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,13 @@ export class RestApiService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
   private returnUrl: string;
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
+
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router,
+    private myUtils: MyUtils,
+  ) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/login';
@@ -38,7 +45,7 @@ export class RestApiService {
     return this.currentUserSubject.value;
   }
 
-  myAuthHttp(method, apiName, param) {
+  myAuthHttp(method, apiName, param = {}) {
     if ('post' === method.toLowerCase()) {
       return this.http.post<any>(this.baseURl + apiName, param, this.getApiHeader())
         .pipe(map(response => {
@@ -54,8 +61,8 @@ export class RestApiService {
     }
   }
 
-  myHttp(method, apiName, param) {
-    console.log('myHttp', this.baseURl + apiName)
+  myHttp(method, apiName, param = {}) {
+    // console.log('myHttp', this.baseURl + apiName, param)
     if ('post' === method.toLowerCase()) {
       return this.http.post<any>(this.baseURl + apiName, param)
         .pipe(map(response => {
@@ -63,7 +70,11 @@ export class RestApiService {
           return response;
         }));
     } else {
-      return this.http.get<any>(this.baseURl + apiName)
+      let apiUrl = this.baseURl + apiName;
+      apiUrl = this.myUtils.paramUrl(param, apiUrl);
+
+      // console.log('apiUrl', apiUrl);
+      return this.http.get<any>(apiUrl)
         .pipe(map(response => {
           // console.log('myHttp:get', response);
           return response;

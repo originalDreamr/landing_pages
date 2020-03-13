@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+<div class="container-fluid blog-top-placeholder text-center">
+  <div class="container">
+    <h2 class="ef-color-blue">Efortles Knowledge Base.</h2>
+    <p>
+      Efortles believes in knowledge sharing to empower aspiring entrepreneurs, business owners and professionals.
+    </p>
+  </div>
+</div>
+
+<div class="container-fluid blog-cards cards-dark-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="pl-2">Latest</h3>
+      </div>
+      <div class="col-md-4 mt-3" *ngFor="let blog of blogList; let i = index;">
+        <div class="card-deck">
+          <div class="card">
+            <a [routerLink]="'/blog/'+blog.path_name" class="card-img-top blog-cover"
+               [style]="'background-image: url('+blog.cover+');'">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <a [routerLink]="'/blog/'+blog.path_name">{{blog.title}}</a>
+              </h5>
+              <p class="card-text">{{(blog.description).substr(0, 300)}}</p>
+              <!--              <a href="#" class="btn btn-primary">Read More</a>-->
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated: {{blog.updated_at | date: 'dd/MM/yyy'}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container pt-3">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-lg justify-content-center">
+      <li class="page-item">
+        <a class="page-link" [routerLink]="'/blogs/page/1'" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li *ngFor="let i of myUtils.rangeKeys(pagination.last_page);" [class]="(pagination.current_page*1) == (i + 1) ? 'page-item active' : 'page-item'">
+        <a class="page-link" [routerLink]="'/blogs/page/'+ (i + 1)">{{i+1}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" [routerLink]="'/blogs/page/'+ pagination.last_page" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<app-footer-banner></app-footer-banner>
+<app-downloads></app-downloads>
+<app-footer></app-footer>

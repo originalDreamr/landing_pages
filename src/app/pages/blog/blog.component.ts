@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {MyServiceService} from '../../services/my-service.service';
 import {SeoService} from '../../services/seo.service';
 import {RestApiService} from '../../services/rest-api.service';
-import {Subscription} from 'rxjs';
+import {MyUtils} from '../../helpers/my-utils';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -10,38 +11,65 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
+  pathName = null;
+  blog = {
+    title: '',
+    content: '',
+    updated_at: '',
+    cover: '',
+  };
+
+  shareBtnExpanded = true;
+  pageConfig = {
+    title: 'Blog - Efortles',
+    description: 'Blog description.',
+    keywords: '',
+    pageUrl: 'blog/',
+  };
 
   constructor(
     private restService: RestApiService,
     public myService: MyServiceService,
+    public myUtils: MyUtils,
     private seoService: SeoService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {
     this.seoService.setMeta(this.pageConfig);
   }
 
-  pageConfig = {
-    title: 'Blogs - Efortles',
-    description: 'Blog description.',
-    keywords: '',
-    pageUrl: 'blogs',
-  };
-  public pagination = {};
-
-  public blogList: [];
 
   ngOnInit(): void {
-    this.getBlogList();
+    this.pathName = this.activatedRoute.snapshot.paramMap.get('pathName');
+    this.getBlogDetail();
   }
 
-  getBlogList() {
-    this.restService.myHttp('GET', 'blogs', '')
-      .subscribe(res => {
-        console.log('getBlogList', res);
-        this.pagination = res;
-        this.blogList = res.data;
-      }, error => {
-        // console.log('getBlogList:error', error);
-        return {};
-      });
+  getBlogDetail() {
+    if (this.pathName === null) {
+      // redirect to blog list page
+      this.router.navigate(['/blogs']);
+    } else {
+      // console.log('pathName', this.pathName, 'blog/' + this.pathName);
+      this.restService.myHttp('GET', 'blog/' + this.pathName)
+        .subscribe(res => {
+          // console.log('getBlogDetail', res);
+          this.blog = res;
+          this.pageConfig = {
+            title: res.title + ' - Efortles',
+            description: res.description,
+            keywords: '',
+            pageUrl: 'blog/' + res.path_name,
+          };
+          this.seoService.setMeta(this.pageConfig);
+        }, error => {
+          // console.log('getBlogList:error', error);
+          return {};
+        });
+    }
+  }
+
+  toggleShareBtn(action) {
+    this.shareBtnExpanded = action === 'open';
+    console.log('shareBtnExpanded', this.shareBtnExpanded);
   }
 }

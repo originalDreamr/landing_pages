@@ -16,6 +16,7 @@ import {PaymentProcessingComponent} from './pages/services/payment-processing/pa
 import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {PodcastComponent} from './pages/podcast/podcast.component';
 import {BlogComponent} from './pages/blog/blog.component';
+import {BlogsComponent} from './pages/blogs/blogs.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,10 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'podcast', component: PodcastComponent },
   // others and testing
-  { path: 'blogs', component: BlogComponent },
+  { path: 'blog/:pathName', component: BlogComponent },
+  { path: 'blogs/page/:page', component: BlogsComponent },
+  { path: 'blogs', component: BlogsComponent },
+
   { path: 'ng-helper', component: NgHelperComponent },
   { path: '404', component:  NotFoundComponent},
   { path: '**', redirectTo: '404' }
