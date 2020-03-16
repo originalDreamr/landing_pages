@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NgHelperComponent} from './pages/ng-helper/ng-helper.component';
 import {HomeComponent} from './pages/home/home.component';
 import {HeaderComponent} from './fragments/header/header.component';
 import {FooterComponent} from './fragments/footer/footer.component';
@@ -28,11 +27,13 @@ import { PodcastComponent } from './pages/podcast/podcast.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import {MyUtils} from './helpers/my-utils';
 import { BlogsComponent } from './pages/blogs/blogs.component';
+import {ShareModule} from '@ngx-share/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgxJsonLdModule} from '@ngx-lite/json-ld';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgHelperComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
@@ -56,9 +57,15 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule,
+    HttpClientModule, // (Required) for share counts
+    // HttpClientJsonpModule, // (Optional) For Tumblr counts
+    // ShareButtonsModule,
+    ShareModule,
+    // Register module
+    NgxJsonLdModule,
   ],
   providers: [CookieService, MyUtils],
   bootstrap: [AppComponent]

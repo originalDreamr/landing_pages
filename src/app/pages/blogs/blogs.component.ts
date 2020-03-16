@@ -1,19 +1,43 @@
-import {Component, DoCheck, OnInit} from '@angular/core';
+import {AfterViewInit, Component, DoCheck, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {RestApiService} from '../../services/rest-api.service';
 import {MyServiceService} from '../../services/my-service.service';
 import {MyUtils} from '../../helpers/my-utils';
 import {SeoService} from '../../services/seo.service';
 import {ActivatedRoute} from '@angular/router';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-blogs',
   templateUrl: './blogs.component.html',
-  styleUrls: ['./blogs.component.scss']
+  styleUrls: ['./blogs.component.scss'],
+  animations: [
+    trigger('openClose', [
+      // ...
+      state('open', style({
+        width: '288px',
+        opacity: 1,
+        paddingLeft: '10px',
+      })),
+      state('closed', style({
+        width: '0px',
+        opacity: 0,
+        paddingLeft: '0px',
+      })),
+      transition('open => closed', [
+        animate('0.25s')
+      ]),
+      transition('closed => open', [
+        animate('0.25s')
+      ]),
+    ]),
+  ],
 })
-export class BlogsComponent implements OnInit, DoCheck {
-
+export class BlogsComponent implements OnInit, AfterViewInit, DoCheck {
+  shareBtnExpanded = false;
   page = 1;
   constructor(
+    @Inject(PLATFORM_ID) private platformId,
     private restService: RestApiService,
     public myService: MyServiceService,
     public myUtils: MyUtils,
@@ -24,10 +48,10 @@ export class BlogsComponent implements OnInit, DoCheck {
   }
 
   pageConfig = {
-    title: 'Blogs - Efortles',
-    description: 'Blog description.',
+    title: 'Efortles Knowledge Base - Efortles',
+    description: 'Efortles believes in knowledge sharing to empower aspiring entrepreneurs, business owners and professionals.',
     keywords: '',
-    pageUrl: 'blogs',
+    pageUrl: this.seoService.siteUrl + 'blogs',
   };
 
   public blogList: [];
@@ -45,6 +69,11 @@ export class BlogsComponent implements OnInit, DoCheck {
     this.getBlogList(this.page);
   }
 
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo(0, 0);
+    }
+  }
 
   ngDoCheck(): void {
     const routeParamMap = this.activatedRoute.snapshot.paramMap;
@@ -69,4 +98,8 @@ export class BlogsComponent implements OnInit, DoCheck {
       });
   }
 
+  toggleShareBtn() {
+    this.shareBtnExpanded = !this.shareBtnExpanded;
+    console.log('shareBtnExpanded', this.shareBtnExpanded);
+  }
 }

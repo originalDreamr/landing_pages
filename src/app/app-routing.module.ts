@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './pages/home/home.component';
-import {NgHelperComponent} from './pages/ng-helper/ng-helper.component';
 import {FeaturesComponent} from './pages/features/features.component';
 import {HowItWorksComponent} from './pages/how-it-works/how-it-works.component';
 import {PaymentGatewayComponent} from './pages/pricing/payment-gateway/payment-gateway.component';
@@ -17,6 +16,7 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {PodcastComponent} from './pages/podcast/podcast.component';
 import {BlogComponent} from './pages/blog/blog.component';
 import {BlogsComponent} from './pages/blogs/blogs.component';
+import {BlogResolverService} from './services/blog-resolver.service';
 
 
 const routes: Routes = [
@@ -44,7 +44,6 @@ const routes: Routes = [
   { path: 'blogs/page/:page', component: BlogsComponent },
   { path: 'blogs', component: BlogsComponent },
 
-  { path: 'ng-helper', component: NgHelperComponent },
   { path: '404', component:  NotFoundComponent},
   { path: '**', redirectTo: '404' }
 ];

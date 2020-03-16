@@ -7,6 +7,7 @@ import {MetaLinkService} from './meta-link.service';
 })
 export class SeoService {
   public siteUrl = 'https://www.efortles.com/';
+  public siteLogo = this.siteUrl + 'assets/logo@2x.png';
 
   constructor(private titleService: Title,
               private metaService: Meta,
@@ -20,7 +21,11 @@ export class SeoService {
     // @ts-ignore
     this.setNameAttribute('keywords', pageConfig.keywords);
     // @ts-ignore
-    this.setMateLink(this.siteUrl + pageConfig.pageUrl);
+    let pageUrl = pageConfig.pageUrl;
+    if (pageUrl.indexOf('https://') < 0) {
+      pageUrl = this.siteUrl + pageUrl;
+    }
+    this.setMateLink(pageUrl);
     // this.setNameAttribute('twitter:title', seoConfig[page].title);
     // this.setNameAttribute('twitter:description', seoConfig[page].description);
     // this.setNameAttribute('twitter:image', seoConfig[page].image);

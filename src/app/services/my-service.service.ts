@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {AfterViewInit, Injectable} from '@angular/core';
 import {EventManager} from '@angular/platform-browser';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RestApiService} from './rest-api.service';

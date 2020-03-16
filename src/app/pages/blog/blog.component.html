@@ -6,10 +6,22 @@
       <p>
         <a class="ef-color-blue" routerLink="/blogs">Efortles Knowledge Base</a>
         <span class="share-button-box float-right">
-          <a class="share-btn" href="javascript:;" (click)="toggleShareBtn('open');"><i class="fa fa-share-alt"></i></a>
-          <div *ngIf="shareBtnExpanded" class="share-options">
-            <a [href]="'mailto:info@efortles.com?subject=Efortles Knowledge Base - ' + blog.title + '&body=' + pageFullUrl"><i class="fa fa-envelope"></i></a>
-            <a href="javascript:;" class="icon-close-share" (click)="toggleShareBtn('close');"><i class="fa fa-close"></i></a>
+          <a class="share-btn" href="javascript:;" (click)="toggleShareBtn();"><i class="fa fa-share-alt"></i></a>
+          <div [@openClose]="shareBtnExpanded ? 'open' : 'closed'" class="share-options">
+            <a [href]="'mailto:info@efortles.com?subject=' + pageConfig.title + '&body=' + pageConfig.pageUrl"><i class="fa fa-envelope"></i></a>
+            <a href="javascript:;" mat-fab shareButton="facebook" style.backgroundColor="'white'"
+               [title]="pageConfig.title" [description]="pageConfig.description">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="javascript:;" mat-fab shareButton="twitter" style.backgroundColor="'white'"
+               [title]="pageConfig.title" [description]="pageConfig.description">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="javascript:;" mat-fab shareButton="linkedin" style.backgroundColor="'white'"
+               [title]="pageConfig.title" [description]="pageConfig.description">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="javascript:;" class="icon-close-share" (click)="toggleShareBtn();"><i class="fa fa-close"></i></a>
           </div>
         </span>
       </p>
@@ -23,10 +35,12 @@
       <img class="in-blog-img" src= "{{blog.cover}}" alt="{{blog.title}}" title="{{blog.title}}">
       <p [innerHTML]="blog.content"></p>
     </div>
+
   </div>
 </div>
-
 <app-footer-banner></app-footer-banner>
 
 <app-downloads></app-downloads>
 <app-footer></app-footer>
+<ngx-json-ld [json]="schema"></ngx-json-ld>
+

@@ -8,7 +8,7 @@
   line-height: 36px;
   padding: 45px 0;
   p{
-    padding: 0 45px;
+    //padding: 0 45px;
   }
 }
 .cards-dark-bg {
@@ -50,4 +50,48 @@
   color: #fff;
   background-color: $ef-color-blue;
   border-color: #007bff;
+}
+
+.share-button-box{
+  float: right;
+  position: relative;
+  z-index: 9;
+
+  .share-options{
+    position: absolute;
+    top: -5px;
+    right: 0;
+    z-index: 99;
+    background-color: black;
+    color: white;
+    padding-left: 10px;
+    border: 0px solid white;
+    border-radius: 10px;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    a{
+      float: left;
+      color: white;
+      display: inline-block;
+      padding: 5px 20px;
+    }
+  }
+}
+
+.share-btn{
+  width: 30px;
+  height: 30px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  color: gray;
+  line-height: 28px;
+  text-align: center;
+  display: inline-block;
+}
+.share-btn:hover{
+  background-color: black;
+  color: white;
 }

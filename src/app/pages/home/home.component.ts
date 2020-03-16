@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
 import {SeoService} from '../../services/seo.service';
 import {EventManager} from '@angular/platform-browser';
 import {isPlatformBrowser} from '@angular/common';
@@ -12,17 +12,15 @@ import {MyServiceService} from '../../services/my-service.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   constructor(
-    public myService: MyServiceService,
     @Inject(PLATFORM_ID) private platformId,
+    public myService: MyServiceService,
     private seoService: SeoService,
     private eventManager: EventManager,
     ) {
     this.seoService.setMeta(this.pageConfig);
-    this.isBrowser = isPlatformBrowser(platformId);
   }
-  isBrowser;
 
   pageConfig = {
     title: 'Small Business CPA & Bookkeeping Services New York - Efortles',
@@ -55,9 +53,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // tslint:disable-next-line:use-lifecycle-interface
+
   ngAfterViewInit() {
-    if (this.isBrowser) {
+    if (isPlatformBrowser(this.platformId)) {
       window.scrollTo(0, 0);
     }
   }

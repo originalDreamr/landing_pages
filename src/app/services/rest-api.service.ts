@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, Observable, throwError} from 'rxjs';
 import {User} from '../models/User';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router, ActivatedRoute} from '@angular/router';
@@ -92,5 +92,14 @@ export class RestApiService {
     this.currentUserSubject.next(null);
     this.router.navigate(['/']);
     // this.router.navigate([this.returnUrl]);
+  }
+
+  syncHttp(apiName) {
+    return this.http.get(this.baseURl + apiName).toPromise()
+      .then()
+      .catch((error) => {
+        const errorSub = throwError(error);
+        errorSub.subscribe();
+      });
   }
 }

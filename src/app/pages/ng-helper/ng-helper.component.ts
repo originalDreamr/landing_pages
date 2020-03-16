@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {SeoService} from '../../services/seo.service';
 import {MyServiceService} from '../../services/my-service.service';
 
@@ -16,6 +16,7 @@ export class NgHelperComponent implements OnInit {
     pageUrl: 'ng-helper'
   };
   constructor(
+    @Inject(PLATFORM_ID) private platformId,
     public myService: MyServiceService,
     private seoService: SeoService
   ) {

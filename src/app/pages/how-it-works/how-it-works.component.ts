@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {MyServiceService} from '../../services/my-service.service';
 import {SeoService} from '../../services/seo.service';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-how-it-works',
   templateUrl: './how-it-works.component.html',
   styleUrls: ['./how-it-works.component.scss']
 })
-export class HowItWorksComponent implements OnInit {
+export class HowItWorksComponent implements OnInit, AfterViewInit {
 
   pageConfig = {
     title: 'Small Business Accounting Services New York - Small Business CPA',
@@ -17,6 +18,7 @@ export class HowItWorksComponent implements OnInit {
     pageUrl: 'how-it-works',
   };
   constructor(
+    @Inject(PLATFORM_ID) private platformId,
     public myService: MyServiceService,
     private seoService: SeoService,
   ) {
@@ -26,4 +28,9 @@ export class HowItWorksComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo(0, 0);
+    }
+  }
 }
