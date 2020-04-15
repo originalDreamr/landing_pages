@@ -43,6 +43,7 @@ const routes: Routes = [
   { path: 'blog/:pathName', component: BlogComponent },
   { path: 'blogs/page/:page', component: BlogsComponent },
   { path: 'blogs', component: BlogsComponent },
+  { path: 'my-blogs', component: BlogsComponent },
 
   { path: '404', component:  NotFoundComponent},
   { path: '**', redirectTo: '404' }

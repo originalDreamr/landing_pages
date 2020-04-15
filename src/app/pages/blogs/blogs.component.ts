@@ -100,6 +100,5 @@ export class BlogsComponent implements OnInit, AfterViewInit, DoCheck {
 
   toggleShareBtn() {
     this.shareBtnExpanded = !this.shareBtnExpanded;
-    console.log('shareBtnExpanded', this.shareBtnExpanded);
   }
 }

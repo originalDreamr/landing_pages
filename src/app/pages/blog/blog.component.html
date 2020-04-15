@@ -10,17 +10,22 @@
           <div [@openClose]="shareBtnExpanded ? 'open' : 'closed'" class="share-options">
             <a [href]="'mailto:info@efortles.com?subject=' + pageConfig.title + '&body=' + pageConfig.pageUrl"><i class="fa fa-envelope"></i></a>
             <a href="javascript:;" mat-fab shareButton="facebook" style.backgroundColor="'white'"
-               [title]="pageConfig.title" [description]="pageConfig.description">
+               [title]="pageConfig.title" [description]="pageConfig.description" [image]="pageConfig.pageCover">
               <i class="fa fa-facebook"></i>
             </a>
             <a href="javascript:;" mat-fab shareButton="twitter" style.backgroundColor="'white'"
-               [title]="pageConfig.title" [description]="pageConfig.description">
+               [title]="pageConfig.title" [description]="pageConfig.description" [image]="pageConfig.pageCover">
               <i class="fa fa-twitter"></i>
             </a>
             <a href="javascript:;" mat-fab shareButton="linkedin" style.backgroundColor="'white'"
-               [title]="pageConfig.title" [description]="pageConfig.description">
+               [title]="pageConfig.title" [description]="pageConfig.description" [image]="pageConfig.pageCover">
               <i class="fa fa-linkedin"></i>
             </a>
+
+<!--            <a [href]="'https://www.linkedin.com/shareArticle?mini=true&url=' +pageConfig.pageUrl+-->
+<!--            '&title=' +pageConfig.title+ '&summary=efortles.com&source=Efortles'" onclick="window.open(this.href, 'mywin',-->
+<!--'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-linkedin"></i></a>-->
+
             <a href="javascript:;" class="icon-close-share" (click)="toggleShareBtn();"><i class="fa fa-close"></i></a>
           </div>
         </span>

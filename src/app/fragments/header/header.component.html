@@ -1,6 +1,6 @@
 <header class="sticky-top">
 <!--  !isLogin && -->
-  <div class="limited-spot-banner" *ngIf="isNormalPage && myService.spotsLimit > 0">
+  <div class="limited-spot-banner" *ngIf="isNormalPage && myService.isSpotDataReady && myService.spotsLimit > 0">
     <div class="container content">
     <div class="row">
       <div class="col-md-4 text-nowrap">
@@ -74,7 +74,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navResourcesDropdown">
                   <a class="dropdown-item" routerLink="/about-us" routerLinkActive="active">About Us</a>
-                  <a class="dropdown-item" href="https://www.efortles.co/blogs" routerLinkActive="active">Blog</a>
+                  <a class="dropdown-item" routerLink="/blogs" routerLinkActive="active">Blog</a>
                   <a class="dropdown-item" routerLink="/podcast" routerLinkActive="active">Podcast</a>
                 </div>
               </li>

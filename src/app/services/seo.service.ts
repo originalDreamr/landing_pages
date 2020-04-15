@@ -13,7 +13,7 @@ export class SeoService {
               private metaService: Meta,
               private metaLinkService: MetaLinkService) { }
 
-  setMeta(pageConfig: object) {
+  setMeta(pageConfig: any) {
     // @ts-ignore
     this.setTitle(pageConfig.title);
     // @ts-ignore
@@ -29,10 +29,12 @@ export class SeoService {
     // this.setNameAttribute('twitter:title', seoConfig[page].title);
     // this.setNameAttribute('twitter:description', seoConfig[page].description);
     // this.setNameAttribute('twitter:image', seoConfig[page].image);
-    // this.setPropertyAttribute('og:title', seoConfig[page].title);
-    // this.setPropertyAttribute('og:description', seoConfig[page].description);
-    // this.setPropertyAttribute('og:url', seoConfig[page].url);
-    // this.setPropertyAttribute('og:image', seoConfig[page].image);
+    this.setPropertyAttribute('og:title', pageConfig.title);
+    this.setPropertyAttribute('og:description', pageConfig.description);
+    this.setPropertyAttribute('og:url', pageUrl);
+    if (pageConfig.hasOwnProperty('pageCover')) {
+      this.setPropertyAttribute('og:image', pageConfig.pageCover);
+    }
   }
   private setTitle(title: string) {
     return this.titleService.setTitle(title);

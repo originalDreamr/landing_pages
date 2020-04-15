@@ -22,6 +22,7 @@ export class MyServiceService {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
   }
 
+  isSpotDataReady = false;
   spotsLimit = 1000;
   spotsLeft = 0;
 
@@ -35,6 +36,7 @@ export class MyServiceService {
           if (res.hasOwnProperty('spots_limit')) {
             this.spotsLimit = res.spots_limit;
           }
+          this.isSpotDataReady = true;
         },
         error => {
           return {};
