@@ -19,7 +19,7 @@ import {BlogsComponent} from './pages/blogs/blogs.component';
 import {BlogResolverService} from './services/blog-resolver.service';
 
 
-const routes: Routes = [
+const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', redirectTo: '' },
   { path: 'index', redirectTo: '' },
@@ -50,8 +50,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
+  imports: [RouterModule.forRoot(appRoutes, {
+    initialNavigation: 'enabled',
+    enableTracing: true  // <-- debugging purposes only
 })],
   exports: [RouterModule]
 })

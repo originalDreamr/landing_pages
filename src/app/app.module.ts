@@ -30,6 +30,7 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 import {ShareModule} from '@ngx-share/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxJsonLdModule} from '@ngx-lite/json-ld';
+import {UserCenterModule} from './user-center/user-center.module';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,6 @@ import {NgxJsonLdModule} from '@ngx-lite/json-ld';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
-    AppRoutingModule,
     NgbModule,
     HttpClientModule, // (Required) for share counts
     // HttpClientJsonpModule, // (Optional) For Tumblr counts
@@ -66,6 +66,9 @@ import {NgxJsonLdModule} from '@ngx-lite/json-ld';
     ShareModule,
     // Register module
     NgxJsonLdModule,
+    UserCenterModule,
+    // put AppRoutingModule in last and after other modules
+    AppRoutingModule,
   ],
   providers: [CookieService, MyUtils],
   bootstrap: [AppComponent]
