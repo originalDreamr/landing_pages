@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>System Message</h2>
+<div mat-dialog-content>
+  <p>{{data.message}}</p>
+<!--  <mat-form-field>-->
+<!--    <mat-label>Favorite Animal</mat-label>-->
+<!--    <input matInput [(ngModel)]="data.animal">-->
+<!--  </mat-form-field>-->
+</div>
+<div mat-dialog-actions align="end" class="text-right">
+<!--  <button mat-button (click)="onNoClick()">No Thanks</button>-->
+<!--  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>-->
+  <button class="btn btn-secondary" mat-button cdkFocusInitial (click)="onNoClick()">Close</button>
+</div>

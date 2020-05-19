@@ -30,7 +30,14 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 import {ShareModule} from '@ngx-share/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxJsonLdModule} from '@ngx-lite/json-ld';
-import {UserCenterModule} from './user-center/user-center.module';
+import { SignupTmpComponent } from './pages/signup-tmp/signup-tmp.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {NgxCaptchaModule} from 'ngx-captcha';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import { AlertComponent } from './fragments/alert/alert.component';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { FileViewerComponent } from './pages/file-viewer/file-viewer.component';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -55,21 +62,28 @@ import {UserCenterModule} from './user-center/user-center.module';
     PodcastComponent,
     BlogComponent,
     BlogsComponent,
+    SignupTmpComponent,
+    AlertComponent,
+    FileViewerComponent,
   ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    BrowserAnimationsModule,
-    NgbModule,
-    HttpClientModule, // (Required) for share counts
-    // HttpClientJsonpModule, // (Optional) For Tumblr counts
-    // ShareButtonsModule,
-    ShareModule,
-    // Register module
-    NgxJsonLdModule,
-    UserCenterModule,
-    // put AppRoutingModule in last and after other modules
-    AppRoutingModule,
-  ],
+    imports: [
+        BrowserModule.withServerTransition({appId: 'serverApp'}),
+        BrowserAnimationsModule,
+        NgbModule,
+        HttpClientModule, // (Required) for share counts
+        // HttpClientJsonpModule, // (Optional) For Tumblr counts
+        // ShareButtonsModule,
+        ShareModule,
+        // Register module
+        NgxJsonLdModule,
+        // put AppRoutingModule in last and after other modules
+        AppRoutingModule,
+        ReactiveFormsModule,
+        NgxCaptchaModule,
+        NgxSpinnerModule,
+        MatDialogModule,
+        PdfViewerModule,
+    ],
   providers: [CookieService, MyUtils],
   bootstrap: [AppComponent]
 })

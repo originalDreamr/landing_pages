@@ -27,20 +27,21 @@ export class MyServiceService {
   spotsLeft = 0;
 
   public getUserStatistic() {
-    this.restService.myHttp('GET', 'userStatistic', '')
-      .subscribe(
-        res => {
-          if (res.hasOwnProperty('spots_left')) {
-            this.spotsLeft = res.spots_left;
-          }
-          if (res.hasOwnProperty('spots_limit')) {
-            this.spotsLimit = res.spots_limit;
-          }
-          this.isSpotDataReady = true;
-        },
-        error => {
-          return {};
-        });
+    this.spotsLimit = 0;
+    // this.restService.myHttp('GET', 'userStatistic', '')
+    //   .subscribe(
+    //     res => {
+    //       if (res.hasOwnProperty('spots_left')) {
+    //         this.spotsLeft = res.spots_left;
+    //       }
+    //       if (res.hasOwnProperty('spots_limit')) {
+    //         this.spotsLimit = res.spots_limit;
+    //       }
+    //       this.isSpotDataReady = true;
+    //     },
+    //     error => {
+    //       return {};
+    //     });
   }
 
   public onPageClose() {

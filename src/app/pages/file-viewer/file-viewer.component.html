@@ -1,0 +1,6 @@
+<pdf-viewer [src]="fileSrc"
+            [render-text]="true"
+            [autoresize]="true"
+            [fit-to-page]="true"
+            style="display: block;"
+            (error)="onError($event)"></pdf-viewer>

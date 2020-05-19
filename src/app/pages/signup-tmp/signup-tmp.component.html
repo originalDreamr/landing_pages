@@ -1,0 +1,74 @@
+<div class="container-fluid h-100">
+  <div class="auth-bg"></div>
+  <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Loading...</p>
+  </ngx-spinner>
+<!--  <app-header></app-header>-->
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="auth-form">
+      <div class="form-head text-center">
+        <a routerLink="/"><img src="assets/logo/logo_blue_03.png" width="100"></a><br>
+        <h3>Sign Up</h3>
+        <p class="covid-notice">
+          Due to the COVID-19 crisis, we are significantly impacted and have to operate with very limited resources.
+          Hence, we are not accepting new clients at this moment.
+          Please put down your information below to be put on our waitlist.
+          We will reach out to you once we are ready to onboard new clients.
+        </p>
+      </div>
+
+      <form class="need-validated" [formGroup]="signUpForm"
+            (change)="formChange(signUpForm.value)"
+            (ngSubmit)="doSignUp(signUpForm.value)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" formControlName="displayName" class="form-control" placeholder="Your Name"
+                 [ngClass]="{'is-invalid': isSubmitted && form.displayName.errors}"/>
+          <div *ngIf="isSubmitted && form.displayName.errors" class="invalid-feedback">
+            Please Enter Your Name!
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your Email</label>
+          <input type="email" formControlName="email" class="form-control" value="" placeholder="E-mail Address"
+                 [ngClass]="{'is-invalid': isSubmitted && form.email.errors}" />
+          <div *ngIf="isSubmitted && form.email.errors" class="invalid-feedback">
+            <div *ngIf="form.email.errors.required">Please Enter Your Email Address!</div>
+            <div *ngIf="form.email.errors.email">Please Enter a valid email address!</div>
+            <div *ngIf="form.email.errors.notUnique">Email has already registered!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your Phone Number</label>
+          <input type="text" formControlName="userMobile" class="form-control" value="" placeholder="Phone Number"
+                 [ngClass]="{'is-invalid': isSubmitted && form.userMobile.errors}" />
+          <div *ngIf="isSubmitted && form.userMobile.errors" class="invalid-feedback">
+            <div *ngIf="form.userMobile.errors.required">Please Enter Your Phone Number!</div>
+          </div>
+        </div>
+
+        <div class="form-group" *ngIf="isBrowser">
+          <ngx-recaptcha2 #captchaElem siteKey="6Le5u94UAAAAAMDt9TDfw_ZHyNYmNkjXGqw0JMyF" formControlName="captcha"
+                          (success)="captchaResponse('success', $event)"
+                          (expire)="captchaResponse('expire')"
+                          (reset)="captchaResponse('reset')"
+                          (error)="captchaResponse('error')"
+                          (load)="captchaResponse('load')"
+                          [ngClass]="{ 'is-invalid': isSubmitted && form.captcha.errors }"></ngx-recaptcha2>
+          <div *ngIf="isSubmitted && form.captcha.errors" class="invalid-feedback">
+            Please verify your are not a robot!
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-lg btn-success">Sign Up</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+

@@ -17,6 +17,8 @@ import {PodcastComponent} from './pages/podcast/podcast.component';
 import {BlogComponent} from './pages/blog/blog.component';
 import {BlogsComponent} from './pages/blogs/blogs.component';
 import {BlogResolverService} from './services/blog-resolver.service';
+import {SignupTmpComponent} from './pages/signup-tmp/signup-tmp.component';
+import {FileViewerComponent} from './pages/file-viewer/file-viewer.component';
 
 
 const appRoutes: Routes = [
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'government-notice', component: GovernmentNoticeComponent },
   { path: 'income-tax', component: IncomeTaxComponent },
   { path: 'payroll', component: PayrollComponent },
+  { path: 'payroll-report', redirectTo: 'payroll' },
   { path: 'sales-tax', component: SalesTaxComponent },
   { path: 'payment-processing', component: PaymentProcessingComponent },
   // resources
@@ -43,8 +46,18 @@ const appRoutes: Routes = [
   { path: 'blog/:pathName', component: BlogComponent },
   { path: 'blogs/page/:page', component: BlogsComponent },
   { path: 'blogs', component: BlogsComponent },
+  { path: 'file/:fileName', component: FileViewerComponent },
+  // temp routing
   { path: 'my-blogs', component: BlogsComponent },
+  { path: 'signup', component: SignupTmpComponent },
 
+  // App broken link fix
+  // app -> Paystubs
+  { path: 'paystubreport/:id', redirectTo: 'file/Sample_Paystub.pdf'},
+  // app -> Reports
+  { path: 'deliveries/:did', redirectTo: 'file/Sample_Federal_1120_Tax_Return.pdf'},
+
+  // { path: '**', component:  NotFoundComponent},
   { path: '404', component:  NotFoundComponent},
   { path: '**', redirectTo: '404' }
 ];
@@ -52,7 +65,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes, {
     initialNavigation: 'enabled',
-    enableTracing: true  // <-- debugging purposes only
+    enableTracing: false  // <-- debugging purposes only
 })],
   exports: [RouterModule]
 })

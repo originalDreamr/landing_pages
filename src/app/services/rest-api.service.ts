@@ -61,6 +61,12 @@ export class RestApiService {
     }
   }
 
+  /**
+   *
+   * @param method
+   * @param apiName
+   * @param param
+   */
   myHttp(method, apiName, param = {}) {
     // console.log('myHttp', this.baseURl + apiName, param)
     if ('post' === method.toLowerCase()) {
