@@ -38,6 +38,7 @@ import { AlertComponent } from './fragments/alert/alert.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { FileViewerComponent } from './pages/file-viewer/file-viewer.component';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
+import { LcaPostingComponent } from './pages/lca-posting/lca-posting.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import {PdfViewerModule} from 'ng2-pdf-viewer';
     SignupTmpComponent,
     AlertComponent,
     FileViewerComponent,
+    LcaPostingComponent,
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'serverApp'}),

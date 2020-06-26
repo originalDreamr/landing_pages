@@ -19,6 +19,7 @@ import {BlogsComponent} from './pages/blogs/blogs.component';
 import {BlogResolverService} from './services/blog-resolver.service';
 import {SignupTmpComponent} from './pages/signup-tmp/signup-tmp.component';
 import {FileViewerComponent} from './pages/file-viewer/file-viewer.component';
+import {LcaPostingComponent} from './pages/lca-posting/lca-posting.component';
 
 
 const appRoutes: Routes = [
@@ -50,6 +51,8 @@ const appRoutes: Routes = [
   // temp routing
   { path: 'my-blogs', component: BlogsComponent },
   { path: 'signup', component: SignupTmpComponent },
+  // LCA noticing
+  { path: 'lca-noticing', component: LcaPostingComponent },
 
   // App broken link fix
   // app -> Paystubs
