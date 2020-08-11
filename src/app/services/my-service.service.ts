@@ -61,7 +61,8 @@ export class MyServiceService {
   }
 
   public showHomeVideo(event) {
-    document.location.href = 'https://www.efortles.co/?act=demo';
+    // document.location.href = 'https://www.efortles.co/?act=demo';
+    document.location.href = 'https://user.efortles.com/auth/sign-in?act=demo';
     // this.loginDemo();
     // console.log('showHomeVideo', $(event.target).data('src'), $('#homeVideoFrame').length);
     // $('#homeVideoFrame').prop('src', $(event.target).data( 'src'));
