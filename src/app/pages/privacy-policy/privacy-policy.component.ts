@@ -18,7 +18,7 @@ import {isPlatformBrowser} from '@angular/common';
     ]
 	)]
 })
-export class PrivacyPolicyComponent implements OnInit {
+export class PrivacyPolicyComponent implements OnInit, AfterViewInit {
 
 	pageConfig = {
     title: 'Efortles Privacy Policy - Accounting & Bookkeeping Services',

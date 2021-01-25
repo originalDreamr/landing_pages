@@ -40,6 +40,7 @@ import { FileViewerComponent } from './pages/file-viewer/file-viewer.component';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
 import { LcaPostingComponent } from './pages/lca-posting/lca-posting.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsNConditionComponent } from './pages/terms-n-condition/terms-n-condition.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.co
     FileViewerComponent,
     LcaPostingComponent,
     PrivacyPolicyComponent,
+    TermsNConditionComponent,
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'serverApp'}),

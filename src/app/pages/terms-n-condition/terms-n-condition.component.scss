@@ -1,0 +1,39 @@
+@charset "utf-8";
+@import "../../styles/common";
+
+
+.privacy-head{ 
+color: #fff;
+font-size: 50px;
+padding-top: 100px;
+padding-bottom: 100px;
+float: left;
+margin: 0px;
+
+}
+
+
+.font-style {
+	font-weight: 500;
+	color: #4d4f5c;
+	line-height: 35px;
+	padding-top: 30px;
+}
+
+.gradient_1 {
+    background-image: linear-gradient(to bottom, #0c7ba8, #0b88ba, #0c95cc, #0e9ed8, #35aede, #62bbde, #85cae6);
+}
+@media (min-width: 1200px) {
+.container {
+    max-width: 1280px;
+}
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #333333;
+    margin: 0 0 15px;
+    line-height: 1.75rem;
+    font-weight: 700;
+}
+.ss-padding {
+    padding: 70px 0;
+}

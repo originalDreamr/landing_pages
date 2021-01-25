@@ -21,6 +21,7 @@ import {SignupTmpComponent} from './pages/signup-tmp/signup-tmp.component';
 import {FileViewerComponent} from './pages/file-viewer/file-viewer.component';
 import {LcaPostingComponent} from './pages/lca-posting/lca-posting.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsNConditionComponent } from './pages/terms-n-condition/terms-n-condition.component';
 
 
 const appRoutes: Routes = [
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
   { path: 'lca-noticing', component: LcaPostingComponent },
   // Footer  
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'terms-n-condition', component: TermsNConditionComponent },
 
   // App broken link fix
   // app -> Paystubs
