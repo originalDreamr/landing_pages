@@ -39,6 +39,7 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { FileViewerComponent } from './pages/file-viewer/file-viewer.component';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
 import { LcaPostingComponent } from './pages/lca-posting/lca-posting.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { LcaPostingComponent } from './pages/lca-posting/lca-posting.component';
     AlertComponent,
     FileViewerComponent,
     LcaPostingComponent,
+    PrivacyPolicyComponent,
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'serverApp'}),

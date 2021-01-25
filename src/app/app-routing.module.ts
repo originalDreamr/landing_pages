@@ -20,6 +20,7 @@ import {BlogResolverService} from './services/blog-resolver.service';
 import {SignupTmpComponent} from './pages/signup-tmp/signup-tmp.component';
 import {FileViewerComponent} from './pages/file-viewer/file-viewer.component';
 import {LcaPostingComponent} from './pages/lca-posting/lca-posting.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 
 const appRoutes: Routes = [
@@ -53,6 +54,8 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupTmpComponent },
   // LCA noticing
   { path: 'lca-noticing', component: LcaPostingComponent },
+  // Footer  
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
 
   // App broken link fix
   // app -> Paystubs
