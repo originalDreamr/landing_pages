@@ -8,15 +8,7 @@ import {isPlatformBrowser} from '@angular/common';
 @Component({
   selector: 'app-privacy-policy',
   templateUrl: './privacy-policy.component.html',
-  styleUrls: ['./privacy-policy.component.scss'],
-  animations:[ 
-    trigger('fade',
-    [ 
-      state('void', style({ opacity : 0})),
-      transition(':enter',[ animate(300)]),
-      transition(':leave',[ animate(500)]),
-    ]
-	)]
+  styleUrls: ['./privacy-policy.component.scss']
 })
 export class PrivacyPolicyComponent implements OnInit, AfterViewInit {
 
@@ -36,8 +28,8 @@ export class PrivacyPolicyComponent implements OnInit, AfterViewInit {
   ) {
     this.seoService.setMeta(this.pageConfig);
   }
- 
-  
+
+
   ngOnInit(): void {
   }
 

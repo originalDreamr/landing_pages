@@ -55,7 +55,7 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupTmpComponent },
   // LCA noticing
   { path: 'lca-noticing', component: LcaPostingComponent },
-  // Footer  
+  // Footer
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-n-condition', component: TermsNConditionComponent },
 
