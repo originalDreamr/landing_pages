@@ -1,104 +1,168 @@
 <header class="sticky-top">
-<!--  !isLogin && -->
-  <div class="limited-spot-banner" *ngIf="isNormalPage && myService.isSpotDataReady && myService.spotsLimit > 0">
-    <div class="container content">
-    <div class="row">
-      <div class="col-md-4 text-nowrap">
-        <span class="star-circle"><i class="fa fa-star"></i></span> Monthly Limited Spots: {{myService.spotsLimit}}
-      </div>
-      <div class="col-md-4">
-        Currently Available: {{myService.spotsLeft}}
-      </div>
-      <div class="col-md-4">
-        <i class="fa fa-phone-square"></i>&nbsp;&nbsp;<a href="tel:888-808-2318">(888) 808-2318</a>
-      </div>
-    </div>
-    </div>
+  <div id="menu-wrap" class="menu-back cbp-af-header dark">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light mx-lg-0">
+						<a class="navbar-brand" href="index.html"><img src="img/logo-light.png" alt=""></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon">
+								<span class="menu-icon__line menu-icon__line-left"></span>
+								<span class="menu-icon__line"></span>
+								<span class="menu-icon__line menu-icon__line-right"></span>
+							</span>
+						</button>
 
-  </div>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ml-auto">
+                <li class="nav-item" routerLinkActive="active" data-ps2id-offset="120">
+                  <a class="nav-link" routerLink="/features">features</a>
+                </li>
+								<li class="nav-item">
+									<a class="nav-link" href="#concept">Concept</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#roadmap">Roadmap</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#team">Team</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#faq">FAQ</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#contact">Contact</a>
+								</li>
+								<li class="nav-item" routerLinkActive="active">
+									<a class="nav-link no-line" href="#" id="navServicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variants</a>
+									<ul class="background-dark-blue-2 sub-shadow">
+										<li><a routerLink="/bookkeeping" routerLinkActive="active">Bookkeeping</a></li>
+										<li><a href="index-11.html">Countdown gradient</a></li>
+										<li><a href="index-2.html">Crowdsale</a></li>
+										<li><a href="index-9.html">Azure blockchain - animated</a></li>
+										<li><a href="index-3.html">From developers - dark</a></li>
+										<li><a href="index-4.html">Crowdsale - dark</a></li>
+										<li><a href="index-5.html">From developers - animated</a></li>
+										<li><a href="index-10.html">Countdown gradient anime</a></li>
+										<li><a href="index-6.html">Crowdsale - animated</a></li>
+										<li><a href="index-7.html" class="active-subnav">From developers - anime dark</a></li>
+										<li><a href="index-8.html">Crowdsale - animated dark</a></li>
+									</ul>
+								</li>
+								<!-- <li class="nav-item mt-2">
+									<a class="btn btn-primary js-tilt" href="#" role="button" data-tilt-perspective="300" data-tilt-speed="700" data-tilt-max="24"><span>ICO Wallet</span></a>
+								</li> -->
 
-  <div class="container pb-3">
-    <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" routerLink="/"><img src="assets/logo@2x.png" height="55"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavBarContent" aria-controls="topNavBarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="ef-font-2rem ef-color-blue"><i class="fa fa-bars"></i></span>
-          </button>
+                <li class="nav-item mt-2" *ngIf="!isLogin">
+                  <a class="nav-link" href="https://user.efortles.com/dashboard" target="_blank" >Sign In</a>
+                </li>
+                <li class="nav-item mt-2" *ngIf="!isLogin">
+                  <a class="nav-link navbar-large-btn" href="https://user.efortles.com/auth/sign-up" target="_blank">Sign Up</a>
+                </li>
 
-          <div class="collapse navbar-collapse" id="topNavBarContent">
-            <ul class="navbar-nav ml-auto">
-<!--              <li class="nav-item" routerLinkActive="active" >-->
-<!--                <a class="nav-link" routerLink="/">home</a>-->
-<!--              </li>-->
-              <li class="nav-item" routerLinkActive="active" >
-                <a class="nav-link" routerLink="/features">features</a>
-              </li>
-              <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link text-nowrap" routerLink="/how-it-works">how it works</a>
-              </li>
-
-              <li class="nav-item dropdown" routerLinkActive="active">
-                <a class="nav-link dropdown-toggle" href="#" id="navPricingDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  pricing
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navPricingDropdown">
-                  <a class="dropdown-item" routerLink="/payment-gateway" routerLinkActive="active">payment gateway</a>
-                  <a class="dropdown-item" routerLink="/accounting-and-taxes" routerLinkActive="active">accounting & taxes</a>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown" routerLinkActive="active">
-                <a class="nav-link dropdown-toggle" href="#" id="navServicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Services
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navServicesDropdown">
-                  <span class="dropdown-item">Free CPA Services</span>
-
-                  <div class="dropdown-sub-menu" style="padding-left: 1rem">
-                    <a class="dropdown-item" routerLink="/bookkeeping" routerLinkActive="active">Bookkeeping</a>
-                    <a class="dropdown-item" routerLink="/sales-tax" routerLinkActive="active">Sales Tax</a>
-                    <a class="dropdown-item" routerLink="/payroll" routerLinkActive="active">Payroll</a>
-                    <a class="dropdown-item" routerLink="/income-tax" routerLinkActive="active">Income Tax</a>
-                    <a class="dropdown-item" routerLink="/government-notice" routerLinkActive="active">Government Notice</a>
-                  </div>
-
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" routerLink="/payment-processing" routerLinkActive="active">Payment Processing</a>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navResourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Resources
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navResourcesDropdown">
-                  <a class="dropdown-item" routerLink="/about-us" routerLinkActive="active">About Us</a>
-                  <a class="dropdown-item" routerLink="/blogs" routerLinkActive="active">Blog</a>
-                  <a class="dropdown-item" routerLink="/podcast" routerLinkActive="active">Podcast</a>
-                </div>
-              </li>
-
-              <li class="nav-item" *ngIf="!isLogin">
-                <a class="nav-link" href="https://user.efortles.com/dashboard" target="_blank">Sign In</a>
-              </li>
-              <li class="nav-item" *ngIf="!isLogin">
-<!--                <a class="nav-link navbar-large-btn" routerLink="/signup">Sign Up</a>-->
-                <a class="nav-link navbar-large-btn" href="https://user.efortles.com/auth/sign-up" target="_blank">Sign Up</a>
-              </li>
-
-<!--              <li class="nav-item" *ngIf="isLogin">-->
-<!--                <a class="nav-link" href="javascript:;" (click)="myService.logOut()">Log out</a>-->
-<!--              </li>-->
-              <li class="nav-item" *ngIf="isLogin">
-                <a class="nav-link navbar-large-btn" href="https://user.efortles.com/">Dashboard</a>
-              </li>
-            </ul>
-
-          </div>
-        </nav>
-      </div>
-    </div>
-  </div>
-
+                <li class="nav-item mt-2" *ngIf="isLogin">
+                  <a class="nav-link navbar-large-btn" href="https://user.efortles.com/">Dashboard</a>
+                </li>
+							</ul>
+						</div>
+					</nav>				
+				</div>
+			</div>
+		</div>
+	</div>
 </header>
+
+<!-- Original Header HTML -->
+<!-- <div class="limited-spot-banner" *ngIf="isNormalPage && myService.isSpotDataReady && myService.spotsLimit > 0">
+  <div class="container content"> 
+  <div class="row">
+    <div class="col-md-4 text-nowrap">
+      <span class="star-circle"><i class="fa fa-star"></i></span> Monthly Limited Spots: {{myService.spotsLimit}}
+    </div>
+    <div class="col-md-4">
+      Currently Available: {{myService.spotsLeft}}
+    </div>
+    <div class="col-md-4">
+      <i class="fa fa-phone-square"></i>&nbsp;&nbsp;<a href="tel:888-808-2318">(888) 808-2318</a>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+<div class="container pb-3">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" routerLink="/"><img src="assets/logo@2x.png" height="55"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavBarContent" aria-controls="topNavBarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="ef-font-2rem ef-color-blue"><i class="fa fa-bars"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="topNavBarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" routerLinkActive="active" >
+              <a class="nav-link" routerLink="/features">features</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link text-nowrap" routerLink="/how-it-works">how it works</a>
+            </li>
+
+            <li class="nav-item dropdown" routerLinkActive="active">
+              <a class="nav-link dropdown-toggle" href="#" id="navPricingDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                pricing
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navPricingDropdown">
+                <a class="dropdown-item" routerLink="/payment-gateway" routerLinkActive="active">payment gateway</a>
+                <a class="dropdown-item" routerLink="/accounting-and-taxes" routerLinkActive="active">accounting & taxes</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown" routerLinkActive="active">
+              <a class="nav-link dropdown-toggle" href="#" id="navServicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navServicesDropdown">
+                <span class="dropdown-item">Free CPA Services</span>
+
+                <div class="dropdown-sub-menu" style="padding-left: 1rem">
+                  <a class="dropdown-item" routerLink="/bookkeeping" routerLinkActive="active">Bookkeeping</a>
+                  <a class="dropdown-item" routerLink="/sales-tax" routerLinkActive="active">Sales Tax</a>
+                  <a class="dropdown-item" routerLink="/payroll" routerLinkActive="active">Payroll</a>
+                  <a class="dropdown-item" routerLink="/income-tax" routerLinkActive="active">Income Tax</a>
+                  <a class="dropdown-item" routerLink="/government-notice" routerLinkActive="active">Government Notice</a>
+                </div>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/payment-processing" routerLinkActive="active">Payment Processing</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navResourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Resources
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navResourcesDropdown">
+                <a class="dropdown-item" routerLink="/about-us" routerLinkActive="active">About Us</a>
+                <a class="dropdown-item" routerLink="/blogs" routerLinkActive="active">Blog</a>
+                <a class="dropdown-item" routerLink="/podcast" routerLinkActive="active">Podcast</a>
+              </div>
+            </li>
+
+            <li class="nav-item" *ngIf="!isLogin">
+              <a class="nav-link" href="https://user.efortles.com/dashboard" target="_blank">Sign In</a>
+            </li>
+            <li class="nav-item" *ngIf="!isLogin">
+              <a class="nav-link navbar-large-btn" href="https://user.efortles.com/auth/sign-up" target="_blank">Sign Up</a>
+            </li>
+
+            <li class="nav-item" *ngIf="isLogin">
+              <a class="nav-link navbar-large-btn" href="https://user.efortles.com/">Dashboard</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+    </div>
+  </div>
+</div> -->

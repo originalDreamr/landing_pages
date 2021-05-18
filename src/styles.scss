@@ -3,6 +3,14 @@
 
 @import "~bootstrap/dist/css/bootstrap.css";
 
+@import "./assets/css/bootstrap.min.css";
+@import './assets/css/font-awesome.min.css';
+@import './assets/css/owl.carousel.css';
+@import './assets/css/owl.transitions.css';
+@import './assets/css/colors/color.css';
+@import './assets/css/style.css';
+
+
 @import "app/styles/common";
 
 html, body { height: 100%; }
